@@ -1,3 +1,7 @@
+p.thick {
+  font-weight: bold;
+}
+
 .container {
   display: grid;
   grid-template-areas:
