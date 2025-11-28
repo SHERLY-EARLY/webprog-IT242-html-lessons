@@ -1,15 +1,18 @@
-
-.container {
+.grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  background-color: dodgerblue;
-  padding: 5px;
-  gap: 5px;
-}
-.container div {
-  background-color: #f1f1f1;
-  color: #000;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
   padding: 10px;
-  font-size: 30px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-row: 1 / span 2;
 }
