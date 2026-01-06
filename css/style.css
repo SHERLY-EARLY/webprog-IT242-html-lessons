@@ -32,7 +32,6 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Rubric 10: Hero Section with Gradient Overlay */
 .hero {
     height: 100vh;
     display: flex;
@@ -40,7 +39,7 @@ body {
     justify-content: center;
     text-align: center;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                url('https://github.com/Esprecion/webprog-IT242-html-lessons/actions/runs/20754880246');
+                url('https://cdn.manilastandard.net/wp-content/uploads/2024/06/B2-3apc-696x366.jpeg');
     background-size: cover;
     background-position: center;
 }
@@ -52,7 +51,7 @@ body {
     animation: fadeInUp 1s ease-out; /* Research: CSS Animations */
 }
 
-/* Rubric 11: Animated Skill Bars (Inspiration from Kards) */
+
 .skill-tag {
     background: var(--card-bg);
     padding: 10px 20px;
@@ -68,7 +67,7 @@ body {
     color: black;
 }
 
-/* Rubric 8: Improved Mobile Responsiveness */
+
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
     .about-flex { flex-direction: column; }
@@ -80,7 +79,6 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Rubric 3 & 10: Premade Typography */
 :root {
     --font-main: 'Inter', sans-serif;
     --font-heading: 'Montserrat', sans-serif;
@@ -91,7 +89,6 @@ body {
     font-weight: 300; /* Light weight for a modern look */
 }
 
-/* Rubric 2: Consistent Headings */
 h1, h2, h3, .logo {
     font-family: var(--font-heading);
     text-transform: uppercase;
@@ -101,7 +98,7 @@ h1, h2, h3, .logo {
 .hero h1 {
     font-weight: 900;
     font-size: 5rem;
-    letter-spacing: -2px; /* Research-based design: tight tracking for big titles */
+    letter-spacing: -2px;
 }
 
 .hero h5 {
