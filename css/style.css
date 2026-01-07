@@ -7,10 +7,10 @@ body {
     line-height: 1.6;
 }
 
-
+/* 2. NAVIGATION (Rubric #5: Structure) */
 .navbar {
     width: 100%;
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.9);
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -18,13 +18,13 @@ body {
     border-bottom: 1px solid #222222;
 }
 
-
 .logo {
-    color: #CCAA00;
+    color: #CCAA00; /* Gold */
     font-weight: bold;
     float: left;
     margin-left: 50px;
     letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .nav-links {
@@ -46,75 +46,153 @@ body {
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
     color: #CCAA00;
 }
 
-
+/* 3. HERO SECTION (Rubric #10: Aesthetics) */
 .hero {
     height: 100vh;
     display: block; 
     text-align: center;
-    padding-top: 25vh; 
-    /* This uses a dark overlay so your white text pops */
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+    padding-top: 35vh; 
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
                       url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Optional: Research - This creates the Parallax effect */
-}
-
-.hero h1 {
-    font-size: 60px;
-    margin: 10px 0;
-    font-weight: 900;
+    background-attachment: fixed;
 }
 
 .hero h5 {
     color: #CCAA00;
     letter-spacing: 5px;
+    text-transform: uppercase;
     margin: 0;
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    margin: 10px 0;
+    font-weight: 900;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #BBBBBB;
+    margin-bottom: 25px;
 }
 
 .btn-primary {
     display: inline-block;
-    margin-top: 20px;
     padding: 12px 30px;
     border: 2px solid #CCAA00;
     color: #FFFFFF;
     text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 2px;
     transition: 0.3s;
 }
 
+.btn-primary:hover {
+    background-color: #CCAA00;
+    color: #000000;
+}
 
 .container {
-    padding: 80px 10%;
+    padding: 100px 10%;
     clear: both;
 }
 
-.skill-tag {
-    background-color: #1A1A1A;
-    padding: 10px 20px;
-    border-left: 3px solid #CCAA00;
-    margin: 10px;
-    display: inline-block;
+.section-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
+.section-header hr {
+    width: 50px;
+    border: 1px solid #CCAA00;
+    margin: 0 0 40px 0;
+}
+
+.about-flex {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: #CCCCCC;
+}
+
+.skills {
+    flex: 1;
+    background-color: #161616;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.skills h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.skill-tag {
+    background-color: #222222;
+    padding: 8px 15px;
+    border-left: 3px solid #CCAA00;
+    margin: 5px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#contact {
+    text-align: center;
+    background-color: #0A0A0A;
+}
 
 footer {
     text-align: center;
-    padding: 40px;
-    border-top: 1px solid #222222;
+    padding: 50px;
+    background-color: #050505;
+    border-top: 1px solid #111111;
     font-size: 12px;
-    color: #888888;
+    color: #666666;
 }
-
 
 .navbar:after {
     content: "";
     display: table;
     clear: both;
+}
+
+@media (max-width: 768px) {
+    .about-flex {
+        flex-direction: column;
+    }
+    
+    .hero h1 {
+        font-size: 40px;
+    }
+    
+    .logo, .nav-links {
+        float: none;
+        text-align: center;
+        margin: 10px 0;
+    }
 }
