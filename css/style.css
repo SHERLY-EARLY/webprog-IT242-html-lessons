@@ -1,109 +1,102 @@
-/* Rubric 3: Professional Color Scheme */
+/* 1. SETUP & FONTS (Rubric #10) */
 :root {
     --gold: #CCAA00;
-    --dark-bg: #0F0F0F;
-    --card-bg: #1A1A1A;
+    --bg: #0F0F0F;
     --white: #FFFFFF;
-    --gray: #888888;
+    --grey: #888888;
 }
 
-/* Rubric 10: Smooth Scrolling and Typography */
-html { scroll-behavior: smooth; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    background-color: var(--dark-bg);
+    font-family: 'Inter', sans-serif; /* Make sure you added the Google Font in HTML */
+    background-color: var(--bg);
     color: var(--white);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
-/* Rubric 11: Personal Research - Glassmorphism Navbar */
+/* 2. NAVIGATION (Rubric #2 & #5) */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 10%;
-    position: fixed;
+    padding: 20px 8%;
+    background: rgba(0, 0, 0, 0.95);
+    position: fixed; /* Keep it at the top */
     width: 100%;
     top: 0;
     z-index: 1000;
-    background: rgba(15, 15, 15, 0.8);
-    backdrop-filter: blur(10px); /* Research: modern blur effect */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #222;
 }
 
+/* DESKTOP NAV LINKS (This fixes your "invisible" problem) */
+.nav-links {
+    display: flex; 
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+/* 3. HERO SECTION (Rubric #10) */
 .hero {
     height: 100vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                url('https://i.pinimg.com/736x/aa/c0/80/aac080118e4fd9205346b0965d78d94c.jpg');
+                url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070');
     background-size: cover;
     background-position: center;
 }
 
 .hero h1 {
-    font-size: 5rem;
-    font-weight: 800;
-    margin: 1rem 0;
-    animation: fadeInUp 1s ease-out; /* Research: CSS Animations */
+    font-size: 4rem;
+    margin-bottom: 10px;
 }
 
-
-.skill-tag {
-    background: var(--card-bg);
-    padding: 10px 20px;
-    border-left: 3px solid var(--gold);
-    margin: 10px;
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.skill-tag:hover {
-    transform: translateY(-5px);
-    background: var(--gold);
-    color: black;
-}
-
-
+/* 4. MOBILE RESPONSIVENESS (Rubric #8) */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .about-flex { flex-direction: column; }
-    .navbar { padding: 1rem 5%; }
-}
+    .navbar {
+        flex-direction: column; /* Stack logo and links on mobile */
+        padding: 15px;
+    }
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+    .nav-links {
+        margin-top: 15px;
+        gap: 15px;
+    }
 
-:root {
-    --font-main: 'Inter', sans-serif;
-    --font-heading: 'Montserrat', sans-serif;
-}
+    .nav-links li {
+        margin-left: 0;
+    }
 
-body {
-    font-family: var(--font-main);
-    font-weight: 300; /* Light weight for a modern look */
-}
+    .nav-links a {
+        font-size: 11px;
+    }
 
-h1, h2, h3, .logo {
-    font-family: var(--font-heading);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.hero h1 {
-    font-weight: 900;
-    font-size: 5rem;
-    letter-spacing: -2px;
-}
-
-.hero h5 {
-    font-family: var(--font-main);
-    font-weight: 700;
-    letter-spacing: 5px;
-    color: var(--gold);
+    .hero h1 {
+        font-size: 2.5rem;
+    }
 }
