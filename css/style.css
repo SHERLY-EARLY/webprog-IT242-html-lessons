@@ -58,9 +58,9 @@ body {
     height: 100vh;
     display: block; 
     text-align: center;
-    padding-top: 35vh; 
+    padding-top: 35vh;
     background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
-                      url('https://i.pinimg.com/736x/aa/c0/80/aac080118e4fd9205346b0965d78d94c.jpg');
+                  url('https://i.pinimg.com/736x/aa/c0/80/aac080118e4fd9205346b0965d78d94c.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
