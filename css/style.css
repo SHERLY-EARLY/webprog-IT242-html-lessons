@@ -57,7 +57,14 @@ body {
     height: 100vh;
     display: block; 
     text-align: center;
-    padding-top: 25vh;
+    padding-top: 25vh; 
+    /* This uses a dark overlay so your white text pops */
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                      url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: Research - This creates the Parallax effect */
 }
 
 .hero h1 {
