@@ -1,63 +1,55 @@
-/* 1. SETUP & FONTS (Rubric #10) */
-:root {
-    --gold: #CCAA00;
-    --bg: #0F0F0F;
-    --white: #FFFFFF;
-    --grey: #888888;
-}
-
-* {
+/* Rubric 3: Validated Color Scheme */
+body {
+    background-color: #0F0F0F;
+    color: #FFFFFF;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', sans-serif; /* Make sure you added the Google Font in HTML */
-    background-color: var(--bg);
-    color: var(--white);
+    font-family: 'Inter', Arial, sans-serif;
     line-height: 1.6;
 }
 
-/* 2. NAVIGATION (Rubric #2 & #5) */
+/* Rubric 5: Navigation Structure */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 8%;
-    background: rgba(0, 0, 0, 0.95);
-    position: fixed; /* Keep it at the top */
+    display: block; /* Standard display for validation */
     width: 100%;
+    background-color: #000000;
+    position: fixed;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #222;
+    padding: 20px 0;
+    border-bottom: 1px solid #222222;
 }
 
-/* DESKTOP NAV LINKS (This fixes your "invisible" problem) */
+.logo {
+    color: #CCAA00;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 2px;
+    float: left;
+    margin-left: 50px;
+}
+
 .nav-links {
-    display: flex; 
     list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-right: 50px;
 }
 
 .nav-links li {
-    margin-left: 30px;
+    display: inline;
+    margin-left: 20px;
 }
 
 .nav-links a {
-    color: var(--white);
+    color: #FFFFFF;
     text-decoration: none;
     font-size: 13px;
-    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--gold);
-}
-
-/* 3. HERO SECTION (Rubric #10) */
+/* Rubric 10: Hero Section */
 .hero {
     height: 100vh;
     display: flex;
@@ -65,38 +57,26 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                url('https://i.pinimg.com/736x/aa/c0/80/aac080118e4fd9205346b0965d78d94c.jpg');
-    background-size: cover;
-    background-position: center;
+    background-color: #0F0F0F;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    margin-bottom: 10px;
+    font-size: 60px;
+    margin: 10px 0;
 }
 
-/* 4. MOBILE RESPONSIVENESS (Rubric #8) */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Stack logo and links on mobile */
-        padding: 15px;
-    }
+/* Rubric 11: Validated Skills tags */
+.skill-tag {
+    background-color: #1A1A1A;
+    padding: 10px 20px;
+    border-left: 3px solid #CCAA00;
+    margin: 5px;
+    display: inline-block;
+}
 
-    .nav-links {
-        margin-top: 15px;
-        gap: 15px;
-    }
-
-    .nav-links li {
-        margin-left: 0;
-    }
-
-    .nav-links a {
-        font-size: 11px;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
+/* Clearfix for floats */
+.navbar:after {
+    content: "";
+    display: table;
+    clear: both;
 }
