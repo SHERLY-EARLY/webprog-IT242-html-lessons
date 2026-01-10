@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashlee Dan Esprecion | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -108,19 +108,23 @@
         <p>Inspiration: Styleshout | Built with AI Assistance</p>
     </footer>
 
-    <div class="zombie-fidget" onclick="killZombie(this)">
-        <div class="zombie-icon">🧟</div>
-        <div class="splatter">💥</div>
-        <span class="fidget-hint">Shoot to Kill!</span>
-    </div>
 
-    <script>
-        function killZombie(element) {
-            element.classList.add('dead');
-            setTimeout(() => {
-                element.classList.remove('dead');
-            }, 3000);
-        }
-    </script>
+    <div class="zombie-fidget" onclick="killZombie(this)">
+    <div class="zombie-icon">🧟</div>
+    <div class="splatter">💥</div>
+    <span class="fidget-hint">Shoot to Kill!</span>
+</div>
+
+<script>
+    function killZombie(element) {
+        // Add the 'dead' class to trigger animation
+        element.classList.add('dead');
+        
+        // Remove the 'dead' class after 3 seconds to let him "respawn"
+        setTimeout(() => {
+            element.classList.remove('dead');
+        }, 3000);
+    }
+</script>
 </body>
 </html>

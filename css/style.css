@@ -6,7 +6,7 @@ body {
     padding: 0;
     font-family: 'Inter', Arial, sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevents unwanted side-scrolling */
 }
 
 /* --- NAVIGATION --- */
@@ -129,6 +129,7 @@ body {
     width: 100%;
 }
 
+/* The Gold Scrollbar */
 .carousel-container::-webkit-scrollbar { height: 6px; }
 .carousel-container::-webkit-scrollbar-track { background: #1a1a1a; }
 .carousel-container::-webkit-scrollbar-thumb { background: #CCAA00; border-radius: 10px; }
@@ -161,9 +162,9 @@ body {
 
 .carousel-item:hover .overlay { opacity: 1; }
 
-/* --- ZOMBIE FIDGET BUTTON (FIXED) --- */
+/* --- ZOMBIE FIDGET BUTTON --- */
 .zombie-fidget {
-    position: fixed; /* This makes it float */
+    position: fixed;
     bottom: 30px;
     right: 30px;
     width: 80px;
@@ -184,7 +185,7 @@ body {
 
 .zombie-fidget.dead .zombie-icon { display: none; }
 .zombie-fidget.dead .splatter { display: block; font-size: 40px; }
-.zombie-fidget.dead { border-color: #880000; background: rgba(136, 0, 0, 0.2); }
+.zombie-fidget.dead { border-color: #880000; }
 
 /* --- FOOTER --- */
 footer {
