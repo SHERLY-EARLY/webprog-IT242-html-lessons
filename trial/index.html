@@ -38,13 +38,32 @@
             </div>
             <div class="about-flex">
                 <div class="about-text">
-                    <p>Hello! I am a second year college student at Asia Pacific College. I take interest in playing video games with deep character development, specifically inspired by the Telltale Games series.</p>
+                    <p>Hello! I am a second year college student trying to create my personalized profile website.</p>
+                    <p>I also take interest in playing video games that have a deep connection to characters and character development; I have taken a particular liking to the TV Series "TWD" (The Walking Dead).</p>
+                    <br>
+                    <p>I would also like and plan to make video games in the future story focusing on story based more so inspired by the Telltale Games.</p>
+
+                    <div class="education-simple" style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                        <h3 style="color: #CCAA00; margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px;">Education</h3>
+                        
+                        <div class="edu-item" style="margin-bottom: 15px; border-left: 2px solid #CCAA00; padding-left: 15px;">
+                            <strong style="display: block; font-size: 1rem; color: #fff;">Bachelor of Science in Information Technology</strong>
+                            <span style="color: #888888; font-size: 0.85rem;">Asia Pacific College | 2024 - Present</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="skills-contact-box">
                     <h3 class="box-title">Get In Touch</h3>
                     <p class="contact-label">Email:</p>
                     <p class="contact-data">adesprecion@student.apc.edu.ph</p>
+                    
+                    <p class="contact-label">Location:</p>
+                    <p class="contact-data">3 Humabon, Makati, 1232 Kalakhang Maynila</p>
+                    
+                    <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+
+                    <h3 class="box-title">My Skills</h3>
                     <div class="skill-tag" v-for="skill in skills">{{ skill }}</div>
                 </div>
             </div>
@@ -53,7 +72,7 @@
         <section id="creations" class="container">
             <div class="section-header">
                 <h2>Cinematic Inspirations</h2>
-                <p style="color: #888;">Rendered via Vue.js Component</p>
+                <p style="color: #888;">Rendered via Vue.js gallery component.</p>
                 <hr>
             </div>
             
@@ -67,16 +86,16 @@
 
         <section id="guestbook" class="container" style="background: #111;">
             <div class="section-header">
-                <h2>Guestbook</h2>
-                <p style="color: #888;">Leave a comment for my portfolio</p>
+                <h2>Guestbook & Survey</h2>
+                <p style="color: #888;">Leave a comment or feedback on my vision.</p>
                 <hr>
             </div>
 
             <div class="guestbook-container">
                 <form @submit.prevent="addComment" class="comment-form">
                     <input v-model="newComment.name" type="text" placeholder="Your Name" required>
-                    <textarea v-model="newComment.text" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn-primary">Post Comment</button>
+                    <textarea v-model="newComment.text" placeholder="Your Message or Feedback" required></textarea>
+                    <button type="submit" class="btn-primary">Post to Guestbook</button>
                 </form>
 
                 <div class="comments-list">
@@ -88,17 +107,37 @@
             </div>
         </section>
 
+        <section id="resources" class="container" style="text-align: center; padding: 60px 10%;">
+            <h2 style="margin-bottom: 10px;">Resources & Tools</h2>
+            <hr style="width: 50px; border: 1px solid #CCAA00; margin: 20px auto;">
+            
+            <div class="resources-grid" style="margin-top: 30px;">
+                <div class="resource-item">
+                    <p class="res-title">Imagery</p>
+                    <p class="res-desc">Pinterest & AMC TWD Gallery</p>
+                </div>
+                <div class="resource-item">
+                    <p class="res-title">Fonts</p>
+                    <p class="res-desc">Google Fonts (Inter & Montserrat)</p>
+                </div>
+                <div class="resource-item">
+                    <p class="res-title">Style</p>
+                    <p class="res-desc">Telltale Games & Styleshout</p>
+                </div>
+            </div>
+        </section>
+
         <div v-if="activeImg" class="vue-lightbox" @click="activeImg = null">
             <span class="close">&times;</span>
             <img :src="activeImg">
         </div>
 
         <footer>
-            <p>&copy; 2026 Made by Ashlee Dan Esprecion | Powered by Vue.js</p>
+            <p>&copy; 2026 Made by Ashlee Dan Esprecion.</p>
+            <p>Built with Vue.js for APC Web Development Criteria</p>
         </footer>
     </div> <script>
         const { createApp } = Vue
-
         createApp({
             data() {
                 return {
@@ -111,18 +150,18 @@
                     ],
                     newComment: { name: '', text: '' },
                     comments: [
-                        { name: 'Professor', text: 'Great use of Vue.js components!' }
+                        { name: 'Portfolio Visitor', text: 'The cinematic layout looks amazing!' }
                     ]
                 }
             },
             methods: {
-                openLightbox(url) {
-                    this.activeImg = url;
-                },
+                openLightbox(url) { this.activeImg = url; },
                 addComment() {
-                    this.comments.unshift({...this.newComment});
-                    this.newComment.name = '';
-                    this.newComment.text = '';
+                    if(this.newComment.name && this.newComment.text) {
+                        this.comments.unshift({...this.newComment});
+                        this.newComment.name = '';
+                        this.newComment.text = '';
+                    }
                 }
             }
         }).mount('#app')
