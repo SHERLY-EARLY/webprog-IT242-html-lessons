@@ -16,7 +16,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#creations">Creations</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
     </header>
@@ -32,7 +32,7 @@
 
     <section id="about" class="container">
         <div class="section-header">
-            <h2>About Me</h2>
+            <h2>About & Contact</h2>
             <hr>
         </div>
         <div class="about-flex">
@@ -49,16 +49,20 @@
                         <strong style="display: block; font-size: 1rem; color: #fff;">Bachelor of Science in Information Technology</strong>
                         <span style="color: #888888; font-size: 0.85rem;">Asia Pacific College | 2024 - Present</span>
                     </div>
-
-                    <div class="edu-item" style="border-left: 2px solid #CCAA00; padding-left: 15px;">
-                        <strong style="display: block; font-size: 1rem; color: #fff;">Senior High School - ABM Strand</strong>
-                        <span style="color: #888888; font-size: 0.85rem;">Urdaneta City National High School | 2023 - 2024</span>
-                    </div>
                 </div>
             </div>
 
-            <div class="skills">
-                <h3>My Skills</h3>
+            <div class="skills-contact-box">
+                <h3 class="box-title">Get In Touch</h3>
+                <p class="contact-label">Email:</p>
+                <p class="contact-data">adesprecion@student.apc.edu.ph</p>
+                
+                <p class="contact-label">Location:</p>
+                <p class="contact-data">3 Humabon, Makati, 1232 Kalakhang Maynila</p>
+                
+                <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+
+                <h3 class="box-title">My Skills</h3>
                 <div class="skill-tag">HTML</div>
                 <div class="skill-tag">CSS</div>
                 <div class="skill-tag">JavaScript</div>
@@ -96,35 +100,30 @@
         <div id="show3" class="lightbox"><a href="#creations" class="close">&times;</a><img src="https://i.pinimg.com/736x/87/4e/21/874e218718a1a8e6894de74ff9622781.jpg" alt="Large View 3"></div>
     </section>
 
-    <section id="contact" class="container" style="text-align: center; background: #111; padding: 60px 10%;">
-        <h2 style="margin-bottom: 10px;">Contact</h2>
-        <p style="color: #CCAA00; font-weight: bold; letter-spacing: 1px;">adesprecion@student.apc.edu.ph</p>
-        <p style="color: #888888; font-size: 0.9rem; margin-top: 10px;">Asia Pacific College</p>
-        <p style="color: #888888; font-size: 0.9rem; margin-top: 10px;">3 Humabon, Makati, 1232 Kalakhang Maynila</p>
+    <section id="resources" class="container" style="text-align: center; background: #111; padding: 60px 10%;">
+        <h2 style="margin-bottom: 10px;">Resources & Tools</h2>
+        <p style="color: #888; margin-bottom: 30px;">Assets and inspirations used for this profile.</p>
+        
+        <div class="resources-grid">
+            <div class="resource-item">
+                <p class="res-title">Imagery</p>
+                <p class="res-desc">Pinterest & AMC TWD Gallery</p>
+            </div>
+            <div class="resource-item">
+                <p class="res-title">Fonts</p>
+                <p class="res-desc">Google Fonts (Inter & Montserrat)</p>
+            </div>
+            <div class="resource-item">
+                <p class="res-title">Style</p>
+                <p class="res-desc">Telltale Games & Styleshout</p>
+            </div>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2026 Made by Ashlee Dan Esprecion.</p>
-        <p>Inspiration: Styleshout | Built with AI Assistance</p>
+        <p>Built with AI Assistance for APC Web Development</p>
     </footer>
 
-
-    <div class="zombie-fidget" onclick="killZombie(this)">
-    <div class="zombie-icon">🧟</div>
-    <div class="splatter">💥</div>
-    <span class="fidget-hint">Shoot to Kill!</span>
-</div>
-
-<script>
-    function killZombie(element) {
-        // Add the 'dead' class to trigger animation
-        element.classList.add('dead');
-        
-        // Remove the 'dead' class after 3 seconds to let him "respawn"
-        setTimeout(() => {
-            element.classList.remove('dead');
-        }, 3000);
-    }
-</script>
 </body>
 </html>
