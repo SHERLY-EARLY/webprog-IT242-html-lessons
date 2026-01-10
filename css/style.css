@@ -125,21 +125,41 @@ body {
     font-size: 12px;
 }
 
-/* --- UPDATED CAROUSEL (FORCES SIDE-BY-SIDE) --- */
+/* --- CAROUSEL WITH CUSTOM GOLD SCROLLBAR --- */
 
 .carousel-container {
     display: flex;
-    flex-wrap: nowrap;        /* This stops images from stacking */
+    flex-wrap: nowrap;
     gap: 20px;
-    overflow-x: auto;         /* This creates the scrollbar */
-    padding-bottom: 25px;
+    overflow-x: auto;
+    padding-bottom: 15px;
     width: 100%;
-    -webkit-overflow-scrolling: touch;
+}
+
+/* Custom Scrollbar Styling (Chrome, Safari, Edge) */
+.carousel-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background: #CCAA00;
+    border-radius: 10px;
+}
+
+/* Scrollbar for Firefox */
+.carousel-container {
+    scrollbar-width: thin;
+    scrollbar-color: #CCAA00 #1a1a1a;
 }
 
 .carousel-item {
     position: relative;
-    flex: 0 0 350px;          /* This stops images from shrinking */
+    flex: 0 0 350px;
     aspect-ratio: 16 / 9;
     overflow: hidden;
     border-radius: 4px;
@@ -183,7 +203,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Lightbox remains the same */
 .lightbox {
     display: none;
     position: fixed;
@@ -213,7 +232,7 @@ body {
     text-decoration: none;
 }
 
-/* --- END UPDATED CODE --- */
+/* --- END CAROUSEL CODE --- */
 
 footer {
     text-align: center;
@@ -242,6 +261,6 @@ footer {
         margin: 10px auto;
     }
     .carousel-item {
-        flex: 0 0 280px; /* Smaller items on mobile */
+        flex: 0 0 280px;
     }
 }
