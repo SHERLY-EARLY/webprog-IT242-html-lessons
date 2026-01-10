@@ -1,84 +1,254 @@
-/* --- ZOMBIE FIDGET BUTTON STYLES --- */
+/* --- GLOBAL STYLES --- */
+body {
+    background-color: #0F0F0F;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* --- NAVIGATION --- */
+.navbar {
+    width: 100%;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    border-bottom: 1px solid #222222;
+}
+
+.logo {
+    color: #CCAA00;
+    font-weight: bold;
+    float: left;
+    margin-left: 50px;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-right: 50px;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #CCAA00;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
+                      url('https://i.pinimg.com/736x/aa/c0/80/aac080118e4fd9205346b0965d78d94c.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h5 {
+    color: #CCAA00;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(30px, 8vw, 60px);
+    margin: 10px 0;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: 2px solid #CCAA00;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: #CCAA00;
+    color: #000;
+}
+
+/* --- LAYOUT CONTAINERS --- */
+.container {
+    padding: 100px 10%;
+    clear: both;
+}
+
+.section-header hr {
+    width: 50px;
+    border: 1px solid #CCAA00;
+    margin: 20px 0;
+}
+
+.about-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-text { flex: 2; }
+
+.skills {
+    flex: 1;
+    background-color: #161616;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.skill-tag {
+    background-color: #222222;
+    padding: 8px 15px;
+    border-left: 3px solid #CCAA00;
+    margin: 5px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+/* --- CINEMATIC CAROUSEL --- */
+.carousel-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+/* Gold Scrollbar */
+.carousel-container::-webkit-scrollbar { height: 6px; }
+.carousel-container::-webkit-scrollbar-track { background: #1a1a1a; border-radius: 10px; }
+.carousel-container::-webkit-scrollbar-thumb { background: #CCAA00; border-radius: 10px; }
+
+.carousel-item {
+    position: relative;
+    flex: 0 0 350px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid #222;
+    cursor: zoom-in;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.carousel-item:hover img { transform: scale(1.05); }
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(204, 170, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.carousel-item:hover .overlay { opacity: 1; }
+
+/* --- LIGHTBOX --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox:target { display: flex; align-items: center; justify-content: center; }
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border: 2px solid #CCAA00;
+}
+
+.close {
+    position: absolute;
+    top: 30px; right: 40px;
+    color: #FFFFFF;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+/* --- ZOMBIE FIDGET BUTTON --- */
 .zombie-fidget {
     position: fixed;
     bottom: 30px;
     right: 30px;
     width: 80px;
     height: 80px;
-    background: rgba(204, 170, 0, 0.1); /* Subtle Gold Glow */
+    background: rgba(204, 170, 0, 0.1);
     border: 2px solid #CCAA00;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: crosshair; /* Changes mouse to a target */
+    cursor: crosshair;
     z-index: 9999;
     transition: all 0.3s ease;
     user-select: none;
-    box-shadow: 0 0 15px rgba(204, 170, 0, 0.2);
 }
 
-.zombie-icon {
-    font-size: 40px;
-    transition: all 0.2s ease;
-}
+.zombie-fidget.dead .zombie-icon { opacity: 0; transform: translateY(30px) rotate(90deg); }
+.zombie-fidget.dead .splatter { display: block; animation: bloodSplatter 0.6s forwards; }
+.zombie-fidget.dead { pointer-events: none; border-color: #880000; background: rgba(136, 0, 0, 0.2); }
 
-.splatter {
-    position: absolute;
-    font-size: 40px;
-    display: none; /* Hidden until death */
-}
-
-.fidget-hint {
-    position: absolute;
-    top: -25px;
-    font-size: 9px;
-    color: #CCAA00;
-    text-transform: uppercase;
-    white-space: nowrap;
-    letter-spacing: 1px;
-    font-weight: bold;
-    opacity: 0.7;
-}
-
-/* Hover State */
-.zombie-fidget:hover {
-    transform: scale(1.1);
-    background: rgba(204, 170, 0, 0.2);
-    box-shadow: 0 0 25px rgba(204, 170, 0, 0.4);
-}
-
-/* Death State (Triggered by JS) */
-.zombie-fidget.dead .zombie-icon {
-    opacity: 0;
-    transform: translateY(30px) rotate(90deg);
-}
-
-.zombie-fidget.dead .splatter {
-    display: block;
-    animation: bloodSplatter 0.6s forwards;
-}
-
-.zombie-fidget.dead {
-    pointer-events: none; /* Prevents clicking while respawning */
-    border-color: #880000; /* Turns dark red on hit */
-    background: rgba(136, 0, 0, 0.2);
-}
-
-/* Animation for the "Kill" */
 @keyframes bloodSplatter {
     0% { transform: scale(0.5); opacity: 1; }
     50% { transform: scale(1.2); opacity: 0.8; }
     100% { transform: scale(1.5); opacity: 0; }
 }
 
-/* Response for Mobile */
+/* --- FOOTER & RESPONSIVE --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #666666;
+    font-size: 12px;
+}
+
 @media (max-width: 768px) {
-    .zombie-fidget {
-        bottom: 20px;
-        right: 20px;
-        width: 60px;
-        height: 60px;
-    }
-    .zombie-icon { font-size: 30px; }
+    .about-flex { display: block; }
+    .nav-links { display: none; } /* Simplified for mobile */
+    .carousel-item { flex: 0 0 280px; }
 }
